@@ -9,10 +9,16 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
 } from 'react-native';
 
-export default class CJUtils extends Component {
+import cjutils from './index'
+
+export default class AppMain extends Component {
+  componentDidMount(){
+      console.log('我在添加水印');
+      cjutils.addWaterMark('2222','333');
+  }
   render() {
     return (
       <View style={styles.container}>
@@ -50,4 +56,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('CJUtils', () => CJUtils);
+AppRegistry.registerComponent('CJUtils', () => AppMain);
